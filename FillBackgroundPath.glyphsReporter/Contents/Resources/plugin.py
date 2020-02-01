@@ -11,15 +11,21 @@
 #
 ###########################################################################################################
 
-
+from __future__ import division, print_function, unicode_literals
+import objc
+from AppKit import NSColor
+from GlyphsApp import *
 from GlyphsApp.plugins import *
 
 class FillBackgroundPath(ReporterPlugin):
+
+	@objc.python_method
 	def settings(self):
 
 		# The name as it will appear in Glyphs’s View menu
 		self.menuName = 'Fill Background Path'
 
+	@objc.python_method
 	def background(self, layer):
 
 		# Fills background path of current glyph with non-photo blue
