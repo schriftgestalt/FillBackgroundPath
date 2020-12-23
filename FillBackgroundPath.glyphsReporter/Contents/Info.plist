@@ -3,9 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
-	<string>English</string>
-	<key>CFBundleDisplayName</key>
-	<string>FillBackgroundPath</string>
+	<string>en</string>
 	<key>CFBundleExecutable</key>
 	<string>plugin</string>
 	<key>CFBundleIdentifier</key>
@@ -14,12 +12,10 @@
 	<string>6.0</string>
 	<key>CFBundleName</key>
 	<string>FillBackgroundPath</string>
-	<key>CFBundlePackageType</key>
-	<string>BNDL</string>
-	<key>CFBundleVersion</key>
-	<string>1.1</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.1</string>
+	<key>CFBundleVersion</key>
+	<string>3</string>
 	<key>UpdateFeedURL</key>
 	<string>https://raw.githubusercontent.com/markmonroy/FillBackgroundPath/master/FillBackgroundPath.glyphsReporter/Contents/Info.plist</string>
 	<key>productPageURL</key>
@@ -30,9 +26,5 @@
 	<string>Copyright, Mark Monroy, 2020</string>
 	<key>NSPrincipalClass</key>
 	<string>FillBackgroundPath</string>
-	<key>PyMainFileNames</key>
-	<array>
-		<string>../MacOS/main.py</string>
-	</array>
 </dict>
 </plist>
