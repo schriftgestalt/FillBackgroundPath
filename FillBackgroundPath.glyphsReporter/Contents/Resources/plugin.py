@@ -14,7 +14,7 @@
 from __future__ import division, print_function, unicode_literals
 import objc
 from AppKit import NSColor
-from GlyphsApp import *
+from GlyphsApp import GSControlLayer
 from GlyphsApp.plugins import *
 
 class FillBackgroundPath(ReporterPlugin):
@@ -27,7 +27,8 @@ class FillBackgroundPath(ReporterPlugin):
 
 	@objc.python_method
 	def background(self, layer):
-
+		if isinstance(layer, GSControlLayer):
+			return
 		# Fills background path of current glyph with non-photo blue
 		NSColor.colorWithRed_green_blue_alpha_(.643, .867, .929, .3).set()
 		if layer.background.bezierPath:
