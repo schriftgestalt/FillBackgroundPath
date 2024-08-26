@@ -15,7 +15,8 @@ from __future__ import division, print_function, unicode_literals
 import objc
 from AppKit import NSColor
 from GlyphsApp import GSControlLayer, GSBackgroundLayer
-from GlyphsApp.plugins import *
+from GlyphsApp.plugins import ReporterPlugin
+
 
 class FillBackgroundPath(ReporterPlugin):
 
