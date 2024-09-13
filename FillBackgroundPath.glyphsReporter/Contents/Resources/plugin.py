@@ -14,7 +14,7 @@
 from __future__ import division, print_function, unicode_literals
 import objc
 from AppKit import NSColor
-from GlyphsApp import GSControlLayer
+from GlyphsApp import Glyphs, GSBackgroundLayer, GSControlLayer
 from GlyphsApp.plugins import ReporterPlugin
 
 
@@ -30,11 +30,17 @@ class FillBackgroundPath(ReporterPlugin):
 	def background(self, layer):
 		if isinstance(layer, GSControlLayer):
 			return
-		background = layer.background if layer.background else layer.foreground()
+		background = layer.foreground() if isinstance(layer, GSBackgroundLayer) else layer.background
+		if background is None:
+			return
+		bezierPath = background.bezierPath
+		if not bezierPath:
+			return
+
 		# Fills background path of current glyph with non-photo blue
 		NSColor.colorWithRed_green_blue_alpha_(.643, .867, .929, .3).set()
-		if background.bezierPath:
-			background.bezierPath.fill()
+		bezierPath.fill()
+
 		# Fills background path of current component glyph with vermillion
 		NSColor.colorWithRed_green_blue_alpha_(.89, .259, .204, .3).set()
 		for backgroundComponent in background.components:
